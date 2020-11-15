@@ -17,18 +17,18 @@
                     <form>
                         <input class="search" type="search" id="search" placeholder="Enter a city" autocomplete="off"> 
                         <input class="search-button" type="submit" id="search-button" value="Search">
-                        <input class="current" type="submit" id="current" value="Current location">
+                        <input class="current-button" type="submit" id="current-button" value="Current location">
                     </form>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-6" id="left">
                         <ul>
                             <li class="current-date" id="current-date">Date and time</li>
-                            <li class="main-description" id="main-description"><i class="fas fa-cloud main"></i> Weather description</li>
-                            <li class="temperature" id="temperature">Temperature<a href="#" id="celsius"> °C</a>
+                            <li class="main-description" id="main-description"><i class="fas fa-cloud main"></i> description</li>
+                            <li class="temperature" id="temperature">temperature<a href="#" id="celsius"> °C</a>
                             | <a href="#" id="fahrenheit">°F</a></li>
                         </ul>
                         </div>
-                    <div class="col-6">
+                    <div class="col-6" id="right">
                         <ul>
                             <li>
                                 Humidity:
@@ -44,7 +44,7 @@
                     </div>
                     <hr />
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2" id="bottom">
                             <ul>
                                 <li>
                                     Day
@@ -60,6 +60,10 @@
                     </div>
                 </div>
             </div>
+            <small>
+                <a href="https://github.com/Agata349/wheatherApp" id="open-source" target="_blank">Open-source code</a>, by Agata
+                Piekarczyk
+            </small>
         </div>
     <script src="src/script.js"></script>
 </body>
