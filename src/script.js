@@ -1,0 +1,90 @@
+let today = new Date();
+
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+let day = days[today.getDay()];
+
+let hours = today.getHours(); 
+let minutes = today.getMinutes();
+
+  
+let currentDate = document.querySelector("#current-date");
+currentDate.innerHTML = `${days[today.getDay()]} ${today.getHours()<10?'0':''}${today.getHours()}:${today.getMinutes()<10?'0':''}${today.getMinutes()}`; 
+
+//changing the city name, temperature, humidity, wind speed and description based on input
+
+function showWeather(response) {
+  document.querySelector("h2").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+}
+
+function searchCity(city) {
+  let apiKey = "dc47e5d5ff6f5cb1e2548e5a30cb1a26";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search").value;
+  searchCity(city);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
+
+
+//Changing city name, temperature and description based on current location
+
+ function searchLocation(position) {
+   let apiKey = "dc47e5d5ff6f5cb1e2548e5a30cb1a26";
+   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
+    position.coords.latitude
+  }&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showWeather);
+ }
+
+ function getCurrentLocation(event) {
+   event.preventDefault();
+   navigator.geolocation.getCurrentPosition(searchLocation);
+ }
+
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", getCurrentLocation);
+
+searchCity("New York");
+
+function changeTemp(){
+ 
+let currentTemp = document.querySelector("#temperature");
+currentTemp.innerHTML = `17 `;
+}
+
+let searchTemp = document.querySelector("form");
+searchTemp.addEventListener("submit", changeTemp);
+
+function changeToFahrenheit() {
+
+  let currentTemp = document.querySelector("#temperature");
+  currentTemp.innerHTML = `63 `
+}
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeToFahrenheit);
+
+function changeToCelsius() {
+  let currentTemp = document.querySelector("#temperature");
+  currentTemp.innerHTML = '17 '
+}
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeToCelsius);
+
+
+
+
+

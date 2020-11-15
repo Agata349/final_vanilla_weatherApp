@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 
-h2 {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-ul {
-  list-style: none;
-}
-
 .card {
   max-width: 565px;
   margin: 0 auto;
@@ -16,6 +7,10 @@ ul {
   color: #fff;
   font-family: "Itim", cursive;
   border-radius: 6px;
+}
+
+h2 {
+  text-transform: capitalize;
 }
 
 .current-date {
@@ -27,13 +22,11 @@ ul {
   margin: 5px;
 }
 
-.main-description,
-.temperature {
+.current-weather {
   font-size: 20px;
 }
 
 .search {
-  margin-left: 20px;
   border-radius: 5px;
 }
 
@@ -54,6 +47,10 @@ ul {
   border-radius: 5px;
 }
 
+.wind {
+  margin-top: 15px;
+}
+
 a {
   color: rgb(68, 18, 161);
 }
@@ -62,16 +59,4 @@ small {
   max-width: 565px;
   display: block;
   margin: 0 auto;
-}
-
-#left {
-  margin-top: 15px;
-}
-
-#right {
-  margin-top: 45px;
-}
-
-#bottom {
-  font-size: 12px;
 }
