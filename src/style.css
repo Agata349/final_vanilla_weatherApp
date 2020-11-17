@@ -13,13 +13,17 @@ h2 {
   text-transform: capitalize;
 }
 
-.main {
-  font-size: 40px;
-  margin: 5px;
+.current-weather {
+  font-size: 20px;
 }
 
-.current-weather {
-  font-size: 18px;
+#description {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+#temperature {
+  font-size: 28px;
 }
 
 .search {
@@ -55,4 +59,14 @@ small {
   max-width: 565px;
   display: block;
   margin: 0 auto;
+}
+
+.current-weather .active {
+    color:  rgb(68, 18, 161);
+    cursor: default;
+}
+
+
+.current-weather .active:hover {
+    text-decoration: none;
 }
