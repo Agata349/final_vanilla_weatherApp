@@ -14,7 +14,11 @@ h2 {
 }
 
 .current-weather {
-  font-size: 20px;
+  font-size: 17px;
+}
+
+hr {
+  margin-top: 0;
 }
 
 #description {
@@ -62,11 +66,14 @@ small {
 }
 
 .current-weather .active {
-    color:  rgb(68, 18, 161);
-    cursor: default;
+  color: rgb(68, 18, 161);
+  cursor: default;
 }
 
-
 .current-weather .active:hover {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.col-2 {
+  text-align: center;
 }
